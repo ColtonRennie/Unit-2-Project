@@ -4,6 +4,7 @@ var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var createError = require('http-errors')
 var session = require('express-session')
+var passport = require('passport')
 
 // load the env vars
 require('dotenv').config()
@@ -12,6 +13,11 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 
 var app = express()
+
+// connect to the MongoDB with mongoose
+
+// require('./config/database') --- this will need to be uncommented when database is connected.
+require('./config/passport')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
@@ -31,6 +37,9 @@ app.use(
     saveUninitialized: true,
   })
 )
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
