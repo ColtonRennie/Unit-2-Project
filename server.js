@@ -16,7 +16,7 @@ var app = express()
 
 // connect to the MongoDB with mongoose
 
-// require('./config/database') --- this will need to be uncommented when database is connected.
+require('./config/database')
 require('./config/passport')
 
 // view engine setup
@@ -40,6 +40,19 @@ app.use(
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.get(
+  '/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+)
+
+app.get(
+  '/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.end('Logged in!')
+  }
+)
 
 app.use('/', indexRouter)
 app.use('/users', usersRouter)

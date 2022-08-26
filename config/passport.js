@@ -2,7 +2,13 @@ const passport = require('passport')
 
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 
-const Meeting = require('../models/meeting')
+passport.serializeUser((user, done) => {
+  done(null, user.id)
+})
+
+passport.deserializeUser((user, done) => {
+  done(null, user)
+})
 
 passport.use(
   new GoogleStrategy(
@@ -12,36 +18,8 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK,
     },
     function (accessToken, refreshToken, profile, cb) {
-      //this is an existing user
-      User.findOne({ googleId: profile.id }, (err, user) => {
-        if (err) return cb(err)
-        if (user) {
-          return cb(null, user)
-        }
-        // This is the new user
-        const newUser = new User({
-          name: profile.displayName,
-          email: profile.emails[0].value,
-          googleId: profile.id,
-        })
-        newUser.save((err) => {
-          if (err) return cb(err)
-          return cb(null, newUser)
-        })
-      })
+      console.log(profile)
+      cb(null, profile)
     }
   )
 )
-
-passport.serializeUser((user, done) => {
-  done(null, user.id)
-})
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findById(id)
-    done(null, user)
-  } catch (err) {
-    done(err, null)
-  }
-})

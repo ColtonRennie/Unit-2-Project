@@ -28,3 +28,6 @@ function index(req, res, next) {
       })
     })
 }
+
+function addFact() {}
+function delFact() {}
