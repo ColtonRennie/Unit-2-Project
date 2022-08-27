@@ -11,11 +11,11 @@ const noteSchema = new mongoose.Schema(
 
 const meetingSchema = new mongoose.Schema(
   {
-    name: String,
-    email: String,
-    avatar: String,
+    contact: String,
+    event: String,
+    date_time: String,
+    location: String,
     notes: [noteSchema],
-    googleId: String,
   },
   {
     timestamps: true,
