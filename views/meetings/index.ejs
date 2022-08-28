@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Contact</th>
+      <th>Event</th>
+      <th>Date-Time</th>
+      <th>location</th>
+      <th>notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% meetings.forEach(function(m) { %>
+    <tr>
+      <td><%= m.contact %></td>
+      <td><%= m.event %></td>
+      <td><%= m.type%></td>
+      <td><%= m.location %></td>
+      <td><a href="/notes/<%= f._id %>">Notes</a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer.ejs') %>
