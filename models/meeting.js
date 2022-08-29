@@ -13,7 +13,7 @@ const meetingSchema = new mongoose.Schema(
   {
     contact: String,
     event: String,
-    type: Date,
+    date: Number,
     location: String,
     notes: [noteSchema],
   },

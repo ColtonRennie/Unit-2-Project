@@ -6,7 +6,7 @@ const passport = require('passport')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Welcome to my Application' })
+  res.render('index', { title: 'Welcome to my Meeting Application' })
 })
 
 //google oauth login route
@@ -19,15 +19,15 @@ router.get(
 router.get(
   '/unit2project',
   passport.authenticate('google', {
-    successRedirect: '/users',
-    failureRedirect: '/users',
+    successRedirect: '/meetings',
+    failureRedirect: '/',
   })
 )
 
 //google oauth logout
 router.get('/logout', function (req, res) {
   req.logout()
-  res.redirect('/users')
+  res.redirect('/')
 })
 
 module.exports = router

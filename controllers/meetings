@@ -1,9 +1,8 @@
 const Meeting = require('../models/meeting')
-// const Note = require('../models/note')
 
 function index(req, res) {
   Meeting.find({}, function (err, meetings) {
-    res.render('meetings/', { title: 'MEETERS', meetings })
+    res.render('meetings/index', { title: 'MEETERS', meetings })
   })
 }
 
