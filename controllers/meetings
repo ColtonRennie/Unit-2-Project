@@ -5,7 +5,32 @@ function index(req, res) {
     res.render('meetings/index', { title: 'MEETERS', meetings })
   })
 }
+function newMeeting(req, res) {
+  const newMeeting = new Meeting()
+  res.render('meetings/new', { title: 'MEETERS' })
+}
+
+function create(req, res) {
+  const meeting = new Meeting(req.body)
+  meeting.save(function (err) {
+    if (err) {
+      return res.redirect('/meetings/new')
+    }
+    res.redirect('/meetings/index')
+  })
+}
+
+function show(req, res) {}
+function deleteMeeting(req, res) {}
+function edit(req, res) {}
+function update(req, res) {}
 
 module.exports = {
   index,
+  new: newMeeting,
+  create,
+  show,
+  delete: deleteMeeting,
+  edit,
+  update,
 }

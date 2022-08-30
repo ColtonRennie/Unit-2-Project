@@ -1,8 +1,63 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.bg-dark {
+  color: white;
+  border-radius: 5px;
+}
+
+.bgi {
+  background-image: url('https://images.pexels.com/photos/5797898/pexels-photo-5797898.jpeg');
+  height: 100vh;
+  background-size: cover;
+  z-index: 100;
+}
+.text {
+  font-size: 75px;
+  font-weight: bold;
+  position: relative;
+  padding: 6.3em;
+  text-align: center;
+  height: 100vh;
+}
+
+.all-meeting{
+  position: absolute;
+  padding:5em;
+  width: 100%;
+  
+}
+
+input#contact,input#event,input#date-time,input#location,textarea#notes{
+  background-color:rgba(130, 134, 234, 0.5);
+  border: 1px solid black;
+  width: 50%;
+  position: relative;
+  left: 20%;
+}
+
+.form-label {
+  font-weight: bold;
+  color: rgba(1, 2, 5, 0.792);
+  position:relative;
+  left:40%
+
+}
+.list{
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button{
+  background-color:rgb(130, 133, 234);
+  width:100px;
+  position: relative;
+  right:40px;
+}
+
+.add-meeting{
+  width:750px;
+  position:relative;
+  left: 35%;
 }

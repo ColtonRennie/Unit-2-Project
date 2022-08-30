@@ -1,26 +1,76 @@
-<%- include('../partials/header.ejs') %>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <title><%= 'Meetser' %></title>
+  </head>
+  <body>
+    <nav class="navbar navbar-Dark bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white border-white" href="#">Meetser</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active text-white" aria-current="page" href="/"
+              >Home</a
+            >
+            <a class="nav-link text-white" href="/meetings/">ALL Meetings</a>
+            <a class="nav-link text-white" href="/meetings/new">ADD Meeting</a>
+            <a
+              id="login-button"
+              ms-hide-element="true"
+              href="/google/"
+              class="button logout login w-button"
+              >Login</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class = all-meeting><table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th>Contact</th>
+        <th>Event</th>
+        <th>Date-Time</th>
+        <th>Location</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% meetings.forEach(function(m) { %>
+      <tr>
+        <td><%= m.contact %></td>
+        <td><%= m.event %></td>
+        <td><%= m.type%></td>
+        <td><%= m.location %></td>
+        <td><a href="/notes/<%= m._id %>">Notes</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table></div>
+    <div class="bgi"></div>
+    </div>
+  
 
-<table id="list">
-  <thead>
-    <tr>
-      <th>Contact</th>
-      <th>Event</th>
-      <th>Date-Time</th>
-      <th>location</th>
-      <th>notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% meetings.forEach(function(m) { %>
-    <tr>
-      <td><%= m.contact %></td>
-      <td><%= m.event %></td>
-      <td><%= m.type%></td>
-      <td><%= m.location %></td>
-      <td><a href="/notes/<%= f._id %>">Notes</a></td>
-    </tr>
-    <% }); %>
-  </tbody>
-</table>
+  
 
 <%- include('../partials/footer.ejs') %>
