@@ -13,9 +13,9 @@ const meetingSchema = new mongoose.Schema(
   {
     contact: String,
     event: String,
-    date: Number,
+    date:String,
     location: String,
-    notes: [noteSchema],
+    notes: {type: noteSchema},
   },
   {
     timestamps: true,

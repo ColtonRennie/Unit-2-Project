@@ -6,17 +6,16 @@ function index(req, res) {
   })
 }
 function newMeeting(req, res) {
-  const newMeeting = new Meeting()
-  res.render('meetings/new', { title: 'MEETERS' })
+    res.render('meetings/new', { title: 'MEETERS' })
 }
 
 function create(req, res) {
   const meeting = new Meeting(req.body)
   meeting.save(function (err) {
     if (err) {
-      return res.redirect('/meetings/new')
+       res.redirect('/meetings/new')
     }
-    res.redirect('/meetings/index')
+    res.redirect('/meetings')
   })
 }
 

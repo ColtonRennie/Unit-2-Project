@@ -47,31 +47,26 @@
     </nav>
     <div class="bgi">
       <table id="list">
-  <form>
+  <form action="/meetings" method="POST">
   <div class="add-meeting row mb-4">
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="contact" class="form-control" />
+        <input type="text" name="contact" class="form-control" />
         <label class="form-label">Contact</label>
       </div>
     </div>
   <div class="form-outline mb-4">
-    <input type="text" id="Event" class="form-control" />
+    <input type="text" name="event" class="form-control" />
     <label class="form-label" >Event</label>
-  </div>
   <div class="form-outline mb-4">
-    <input type="text" id="date-time" class="form-control" />
-    <label class="form-label" >Date-Time</label>
+    <input type="text" name="date" class="form-control" />
+    <label class="form-label" >Date</label>
   </div>
-  <div class="form-outline mb-4">
-    <input type="email" id="location" class="form-control" />
+    <div class="form-outline mb-4">
+    <input type="text" name="location" class="form-control" />
     <label class="form-label" for="form6Example5">Location</label>
   </div>
-  <div class="form-outline mb-4">
-    <textarea class="form-control" id="notes" rows="4"></textarea>
-    <label class="form-label" for="form6Example7">Notes</label>
-  </div>
-  <div class = btn>
+
   <button type="submit" class="add-button">Add</button>
   </div>
 </form>

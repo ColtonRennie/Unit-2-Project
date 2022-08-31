@@ -20,6 +20,7 @@ body {
   padding: 6.3em;
   text-align: center;
   height: 100vh;
+  text-shadow: -2px -2px 0 rgb(154, 94, 236), 1px -1px 0 rgb(155, 94, 164), -1px 1px 0 rgb(155, 94, 164), 1px 1px 0 rgb(155, 94, 164);
 }
 
 .all-meeting{
