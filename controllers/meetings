@@ -18,9 +18,15 @@ function create(req, res) {
     res.redirect('/meetings')
   })
 }
+function deleteMeeting(req, res) {
+  console.log('hello')
+  Meeting.findByIdAndDelete(req.params.id, function (err) {
+    if (err) console.log("Error in deleteMeeting function!");
+    res.redirect("/meetings");
+  });
+}
 
 function show(req, res) {}
-function deleteMeeting(req, res) {}
 function edit(req, res) {}
 function update(req, res) {}
 
