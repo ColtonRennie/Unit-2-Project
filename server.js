@@ -7,13 +7,13 @@ var session = require('express-session')
 var passport = require('passport')
 var methodOverride = require('method-override')
 
-
 // load the env vars
 require('dotenv').config()
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 var meetingsRouter = require('./routes/meetings')
+var notesRouter = require('./routes/notes')
 
 var app = express()
 
@@ -61,6 +61,7 @@ app.get(
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/meetings', meetingsRouter)
+app.use('/', notesRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

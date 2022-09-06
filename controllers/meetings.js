@@ -5,15 +5,16 @@ function index(req, res) {
     res.render('meetings/index', { title: 'MEETERS', meetings })
   })
 }
+
 function newMeeting(req, res) {
-    res.render('meetings/new', { title: 'MEETERS' })
+  res.render('meetings/new', { title: 'MEETERS' })
 }
 
 function create(req, res) {
   const meeting = new Meeting(req.body)
   meeting.save(function (err) {
     if (err) {
-       res.redirect('/meetings/new')
+      res.redirect('/meetings/new')
     }
     res.redirect('/meetings')
   })
@@ -21,14 +22,16 @@ function create(req, res) {
 function deleteMeeting(req, res) {
   console.log('hello')
   Meeting.findByIdAndDelete(req.params.id, function (err) {
-    if (err) console.log("Error in deleteMeeting function!");
-    res.redirect("/meetings");
-  });
+    if (err) console.log('Error in deleteMeeting function!')
+    res.redirect('/meetings')
+  })
 }
 
-function show(req, res) {}
-function edit(req, res) {}
-function update(req, res) {}
+function show(req, res) {
+  Meeting.findById(req.params.id, function (err, meeting) {
+    res.render('meetings/show', { meeting })
+  })
+}
 
 module.exports = {
   index,
@@ -36,6 +39,4 @@ module.exports = {
   create,
   show,
   delete: deleteMeeting,
-  edit,
-  update,
 }

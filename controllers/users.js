@@ -2,8 +2,6 @@ const User = require('../models/meeting')
 
 module.exports = {
   index,
-  addFact,
-  delFact,
 }
 
 function index(req, res, next) {
@@ -24,6 +22,3 @@ function index(req, res, next) {
       })
     })
 }
-
-function addFact() {}
-function delFact() {}

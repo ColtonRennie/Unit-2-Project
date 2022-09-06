@@ -2,7 +2,7 @@
   <body>
     <nav class="navbar navbar-Dark bg-black">
       <div class="container-fluid">
-        <a class="navbar-brand text-white border-white" href="#">Meetser</a>
+        <a class="navbar-brand text-white border-white" href="/meetings/">Meetser</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -32,8 +32,8 @@
         </div>
       </div>
     </nav>
-    <div class="bgi">
-      <table id="list">
+<div class="bgi">
+  <table id="list">
   <form action="/meetings" method="POST">
   <div class="add-meeting row mb-4">
     <div class="col">
@@ -54,7 +54,12 @@
     <label class="form-label" for="form6Example5">Location</label>
   </div>
 
-  <button type="submit" class="add-button">Add</button>
+  <input
+            type="submit"
+            class="btn btn-primary"
+            id="New-Meeting"
+            value="New-Meeting"
+          />
   </div>
 </form>
 </table>

@@ -1,21 +1,16 @@
 const mongoose = require('mongoose')
 
-const noteSchema = new mongoose.Schema(
-  {
-    text: String,
-  },
-  {
-    timestamps: true,
-  }
-)
+const noteSchema = new mongoose.Schema({
+  text: String,
+})
 
 const meetingSchema = new mongoose.Schema(
   {
     contact: String,
     event: String,
-    date:String,
+    date: String,
     location: String,
-    notes: {type: noteSchema},
+    notes: [noteSchema],
   },
   {
     timestamps: true,
