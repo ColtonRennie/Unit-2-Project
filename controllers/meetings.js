@@ -29,6 +29,7 @@ function deleteMeeting(req, res) {
 
 function show(req, res) {
   Meeting.findById(req.params.id, function (err, meeting) {
+    console.log(meeting.notes)
     res.render('meetings/show', { meeting })
   })
 }

@@ -20,45 +20,32 @@ body {
   padding: 6.3em;
   text-align: center;
   height: 100vh;
-  text-shadow: -2px -2px 0 rgb(154, 94, 236), 1px -1px 0 rgb(155, 94, 164), -1px 1px 0 rgb(155, 94, 164), 1px 1px 0 rgb(155, 94, 164);
+  text-shadow: -2px -2px 0 rgb(154, 94, 236), 1px -1px 0 rgb(155, 94, 164),
+    -1px 1px 0 rgb(155, 94, 164), 1px 1px 0 rgb(155, 94, 164);
 }
 
-.all-meeting{
+.all-meeting {
   position: absolute;
-  padding:5em;
+  padding: 5em;
   width: 100%;
-  
-}
-
-input#contact,input#event,input#date-time,input#location,textarea#notes{
-  background-color:rgba(130, 134, 234, 0.5);
-  border: 1px solid black;
-  width: 50%;
-  position: relative;
-  left: 20%;
 }
 
 .form-label {
   font-weight: bold;
   color: rgba(1, 2, 5, 0.792);
-  position:relative;
-  left:40%
-
-}
-.list{
-  justify-content: center;
-  align-items: center;
-}
-
-.add-button{
-  background-color:rgb(130, 133, 234);
-  width:100px;
   position: relative;
-  right:40px;
+  left: 40%;
 }
 
-.add-meeting{
-  width:750px;
-  position:relative;
+.add-meeting {
+  width: 550px;
+  position: relative;
   left: 35%;
+}
+input#New-Meeting {
+  position: relative;
+  left: 35%;
+}
+td#note-text {
+  background-color: #fff;
 }
