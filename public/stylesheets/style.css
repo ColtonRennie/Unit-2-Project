@@ -46,6 +46,10 @@ input#New-Meeting {
   position: relative;
   left: 35%;
 }
+input#Edit {
+  position: relative;
+  left: 40%;
+}
 td#note-text {
   background-color: #fff;
 }

@@ -5,7 +5,8 @@
     <div class = all-meeting><table class="table table-striped table-dark">
     <thead>
       <tr>
-        <th></th>
+        <th>Delete</th>
+        <th>Edit</th>
         <th>Contact</th>
         <th>Event</th>
         <th>Date-Time</th>
@@ -16,18 +17,20 @@
     <tbody>
       <% meetings.forEach(function(m) { %>
       <tr>
+        
         <td><form
           action="/meetings/<%= m.id %>?_method=DELETE"
           class="delete-form"
-          method="POST"
-        >
-          <button id="removeBtn" type="submit">DELETE</button>
+          method="POST">
+          
+          <input id="removeBtn" class="btn btn-danger" type="submit" value="Delete">
         </form></td>
+        <td><a class="btn btn-primary" href="/meetings/<%= m._id %>/edit" role="button">Edit</a></td>
         <td><%= m.contact %></td>
         <td><%= m.event %></td>
         <td><%= m.date %></td>
         <td><%= m.location %></td>
-        <td><a href="/meetings/<%= m._id %>/notes">Notes</a></td>
+        <td><a class="btn btn-primary" href="/meetings/<%= m._id %>/notes" role="button">Notes</a></td>
       </tr>
       <% }); %>
     </tbody>

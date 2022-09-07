@@ -34,10 +34,21 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Meeting.findById(req.params.id, function (err, meeting) {
+    res.render('meetings/edit', {
+      meeting,
+    })
+  })
+}
+function update(req, res) {}
+
 module.exports = {
   index,
   new: newMeeting,
   create,
   show,
   delete: deleteMeeting,
+  edit,
+  update,
 }

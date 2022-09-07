@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs') %>
+<body>
+  <%- include('../partials/nav-bar.ejs') %>
+  <div class="bgi">
+   <table id="list">
+  <form action="/meetings" method="POST">
+  <div class="add-meeting row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input type="text" name="contact" class="form-control" />
+        <label class="form-label">Contact</label>
+      </div>
+    </div>
+  <div class="form-outline mb-4">
+    <input type="text" name="event" class="form-control" />
+    <label class="form-label" >Event</label>
+  <div class="form-outline mb-4">
+    <input type="text" name="date" class="form-control" />
+    <label class="form-label" >Date</label>
+  </div>
+    <div class="form-outline mb-4">
+    <input type="text" name="location" class="form-control" />
+    <label class="form-label" for="form6Example5">Location</label>
+  </div>
+
+  <input
+            type="submit"
+            class="btn btn-primary"
+            id="Edit"
+            value="Edit"
+          />
+  </div>
+</form>
+</table>
+  </div>
+</body>
+<%- include('../partials/footer.ejs') %>

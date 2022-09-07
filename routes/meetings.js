@@ -7,5 +7,7 @@ router.get('/new', meetingsCtrl.new)
 router.get('/:id/notes', meetingsCtrl.show)
 router.post('/', meetingsCtrl.create)
 router.delete('/:id', meetingsCtrl.delete)
+router.get('/:id/edit', meetingsCtrl.edit)
+router.put('/:id', meetingsCtrl.update)
 
 module.exports = router
