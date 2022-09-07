@@ -41,7 +41,17 @@ function edit(req, res) {
     })
   })
 }
-function update(req, res) {}
+function update(req, res) {
+  Meeting.findByIdAndUpdate(req.params.id, req.body, function (err, meeting) {
+    if (err) {
+      console.log(err)
+      res.render('meetings/edit', {
+        meeting,
+      })
+    }
+    res.redirect('/meetings')
+  })
+}
 
 module.exports = {
   index,
