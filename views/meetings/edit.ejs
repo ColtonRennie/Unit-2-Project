@@ -1,25 +1,29 @@
-<%- include('../partials/header.ejs') %>
+<%- include('../partials/header') %>
 <body>
-  <%- include('../partials/nav-bar.ejs') %>
+<%- include('../partials/nav-bar') %>
   <div class="bgi">
    <table id="list">
-  <form action="/meetings" method="POST">
+  <form
+      id="edit-meeting"
+      action="/meetings/<%= meeting.id %>?_method=PUT"
+      method="POST"
+    >
   <div class="add-meeting row mb-4">
     <div class="col">
       <div class="form-outline">
-        <input type="text" name="contact" class="form-control" />
+        <input type="text" name="contact" class="form-control" value = "<%=meeting.contact%>"/>
         <label class="form-label">Contact</label>
       </div>
     </div>
   <div class="form-outline mb-4">
-    <input type="text" name="event" class="form-control" />
+    <input type="text" name="event" class="form-control" value = "<%=meeting.event%>"/>
     <label class="form-label" >Event</label>
   <div class="form-outline mb-4">
-    <input type="text" name="date" class="form-control" />
+    <input type="text" name="date" class="form-control" value = "<%=meeting.date%>"/>
     <label class="form-label" >Date</label>
   </div>
     <div class="form-outline mb-4">
-    <input type="text" name="location" class="form-control" />
+    <input type="text" name="location" class="form-control" value = "<%=meeting.location%>"/>
     <label class="form-label" for="form6Example5">Location</label>
   </div>
 
@@ -27,11 +31,10 @@
             type="submit"
             class="btn btn-primary"
             id="Edit"
-            value="Edit"
+            value="Update"
           />
   </div>
 </form>
 </table>
   </div>
-</body>
-<%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer') %>
